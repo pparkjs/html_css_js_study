@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+	height : 200px;
+	border : 1px solid gold;
+	margin : 10px;
+	font-size : 1.0em;
+/* 	overflow : auto; */
+}
+#d1{
+/* 들여쓰기 */
+	text-indent : 20px;
+/* 	글간격 */
+	line-height: 40px;
+/* 	글자간격 */
+	letter-spacing: 10px;
+}
+/* 이거 또는 #d2 > h1 해도됨 자식 표현 */
+#d2 h1{
+/* 그림자 표현 x좌표만큼 이동 y좌표만큼이동 흐림 색깔*/
+	text-shadow: 20px 20px 1px red;
+}
+
+textarea {
+/* 	글쓰이는 방향이 반대로 바뀜 */
+	direction: rtl;
+}
+span {
+	text-decoration: underline;
+}
+#d3 p:first-child{
+	text-transform: uppercase;
+}
+#d3 p:nth-child(2){
+	text-transform: lowercase;
+}
+#d3 p:last-child{
+	text-transform: capitalize;
+}
+#d4{
+	width : 300px;
+/* 	div를 벗어난 글자를 해당 div크기 만큼 안으로 글자가 들어옴 */
+	word-wrap : break-word; 
+}
+</style>
+</head>
+<body>
+<div id="d1">
+	<span>무궁화 꽃이 피었습니다.</span>
+무궁화 꽃이 피었습니다. 무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.
+무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.
+무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.</div>
+<div id="d2"><h1>h1 제목입니다.</h1>
+무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.
+무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.무궁화 꽃이 피었습니다.</div>
+<textarea rows="20" cols="30"></textarea>
+<div id="d3">
+	<p>Happy New Year - uppercase</p>
+	<p>Happy New Year - lowercase</p>
+	<p>Happy New Year - capitalize</p>
+</div>
+<div id="d4"></div>
+<br>
+<input type="button" value="확인" onclick="proc1()">
+
+<script>
+ function proc1(){
+	 
+	 //새로운 문자를 만든다 - text object - document.createTextNode("문자열")
+	 //공백이 있으면 word-wrap이 필요 없고  공백 없으면 필요
+	 var tnode = document.createTextNode("hello");
+	 
+	 //id가 d4인 요소를 검색
+	 vd4 = document.getElementById("d4");
+	 
+	 //text object d4인 요소에 추가한다 -d4.appendChild(text object)
+	 vd4.appendChild(tnode);
+	 
+ }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

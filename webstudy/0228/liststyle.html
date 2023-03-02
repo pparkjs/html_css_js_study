@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+/* 	700이하는 더이상 안줄어들고 밑에 스크롤바가 생긴다. */
+	min-width : 700px; 
+}
+ul, li, ol{
+	box-sizing : border-box;
+}
+ul, ol{
+	border : 1px solid blue;
+/* 	1%씩 쭐어들게 하는거 좁힐때마다 */
+	width : calc(20% - 1%);
+	height : 130px;
+	margin : 10px;
+	padding : 20px;
+	overflow : hidden;
+	
+/* 	ul이 왼쪽기준으로 한칸씩 이동? */
+	float : left;
+} 
+
+li{
+	border : 1px dotted green;
+}
+#u1{
+/* 	list-style-type : disk; */
+}
+#u2{
+	list-style-type : circle;
+	list-style: square inside url(../images/check.png);
+}
+#u3{
+	list-style-type : square; 
+	list-style-position: inside;
+}
+#u4{
+	list-style-image: url(../images/check.png); 
+	list-style-position: inside;
+}
+
+ol{
+/* 양쪽에 지워라 */
+/* 	clear : both;  */
+/* 	width : calc(20% - 1%); */
+/* 	위에서 이미 clear 양쪽 지웠기때문에 이거 안먹음 해결 방법 있음 
+	hr 을 만들어주고 hr에 clear 해줌 */
+/* 	float : left;  */
+} 
+#o1{
+	list-style-type: decimal;
+}
+
+#o2{
+/*       upper-alpha ->타입 inside-> 포지션 */
+	list-style: upper-alpha inside;
+}
+
+#o3{
+	list-style: hangul inside;
+} 
+ hr{
+	clear : both; 
+ }
+ 
+</style>
+</head>
+<body>
+<ul id="u1">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ul>
+
+<ul id="u2">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ul>
+
+<ul id="u3">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ul>
+
+<ul id="u4">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ul>
+
+<hr>
+
+<ol id="o1">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ol>
+
+<ol id="o2">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ol>
+<ol id="o3">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ol>
+<ol id="o4">
+	<li>Html</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>JQuery</li>
+	<li>Ajax</li>
+</ol>
+
+</body>
+</html>

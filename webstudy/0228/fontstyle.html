@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+<style>
+div{
+	height : 200px;
+	border : 1px solid gold;
+	margin : 10px;
+	font-size : 2.0em;
+	overflow : auto;
+}
+#d1{
+	font-family: serif;
+}
+#d2{
+	/* font-family: sans-serif;
+	font-size: xx-large; */
+	
+/* 	한번에 다 설정한 것 */
+	font : italic small-caps bold 1.5em/30px sanas-serif;
+}
+#d3{
+	font-family: monospace;
+	font-size: xx-small
+}
+#d4{
+	font-family: fantasy;
+	font-size: x-large;
+}
+#d5{
+/* 구글 fonts 사이트에서 가져온 폰트  */
+	font-family: 'Gugi', cursive;
+/* 	넘친부분은 보이지 않게 하겠다. */
+/* 	overflow : hidden; */
+/* 넘친 여부 상관없이 스크롤로 보인다 */
+/* 	overflow : scroll; */
+/* 넘친 부분만 스크롤 생긴다.*/
+	overflow : auto;
+}
+#d6{
+	height : 400px;
+	
+}
+#d6 p:nth-child(2n){
+/* 소문자를 작은 대문자로 바꾸는 설정 */
+	font-variant: small-caps;
+}
+</style>
+
+</head>
+<body>
+<div id="d1">무궁화 꽃이 피었습니다  Happy New Year
+px : pt /0.75<br>
+pt : px * 0.75<br>
+em : pt / 12<br>
+% : pt * 100 / 12<br>
+
+12pt 16px 1.0em 100%<br>
+</div>
+<div id="d2">무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다
+  Happy New Year</div>
+<div id="d3">무궁화 꽃이 피었습니다  Happy New Year</div>
+<div id="d4">무궁화 꽃이 피었습니다  Happy New Year</div>
+<div id="d5">웹폰트 - 내용이 범위를 벗어날때 처리 <br>
+overflow : hidden scroll auto -> 이중에서 선택해서 씀<br>
+ 무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다 
+무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다
+무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니
+무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다무궁화 꽃이 피었습니다 무궁화 꽃이 피었습니다다 </div>
+
+<div id="d6">
+<p>Happy New Year</p>
+<p>Happy New Year - small-caps</p>
+<p>HAPPY NEW YEAR</p>
+<p>Happy New Year - small-caps</p>
+<p>happy new year</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
