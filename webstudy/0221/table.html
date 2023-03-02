@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+  table{
+	  border : 5px double rgb(0, 128, 64);
+	  margin : 10px; /* 전체 바깥쪽 여백 주는 명령어*/
+	  margin-top : 30px;
+  }
+  td{
+   width : 300px;
+   height : 50px;
+   text-align : center; /*가운데 정렬*/
+  }
+  th{
+   height : 80px;
+   background-color : lightgreen;
+  }
+  
+  #tab2{
+  	border : 10px solid blue;
+  	border-collapse: collapse; /* 안쪽 선들 한줄로하기 */
+  }
+  
+  /*한칸 띄우는게 자식 또는 후손을 뜻함*/
+  #tab2 th{
+   background-color : lightblue;
+   height : 50px
+  }
+  
+  #tab3{
+    border-spacing: 10px;
+  }
+  #tab3 td{
+  	width : 200px;
+  }
+  
+  #tab4{
+    border : 3px solid crimson;
+  }
+  #tab4 th{
+    border-bottom : 5px double gold;
+  }
+</style>
+</head>
+
+<body>
+<!-- border는 무조건 1만 권장 border안쓰면 테두리 사라짐 이걸해야 스타일에서 변경가능 -->
+<table border="1" id="tab1">
+  <tr>
+   	 <th>1</th>
+	 <th>2</th>
+	 <th>3</th>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+
+</table>
+
+<table border="1" id="tab2">
+  <tr>
+   	 <th>1</th>
+	 <th>2</th>
+	 <th>3</th>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+
+</table>
+
+<table border="1" id="tab3">
+  <tr>
+   	 <th>1</th>
+	 <th>2</th>
+	 <th>3</th>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+
+</table>
+
+<table border="1" id="tab4">
+  <tr>
+   	 <th>1</th>
+	 <th>2</th>
+	 <th>3</th>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+	
+  <tr>
+	 <td>1</td>
+	 <td>2</td>
+	 <td>3</td>
+  </tr>
+
+</table>
+</body>
+</html>
