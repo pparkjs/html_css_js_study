@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+  div{
+  /* 바깥쪽여백은 margin 안쪽 여백은 padding */
+    border : 2px solid blue;
+    margin : 10px;
+    height : 100px;
+  }
+  #d2 h1{
+    text-align: center;
+  }
+  #d1, #d2{
+    height : 250px;
+  }
+  #d2{
+    width : 90%;
+    height : 400px;
+  }
+  /* d2안에 있는 애들은 바깥쪽 d2를 100퍼로 기준으로 본다. */
+  #d2 #d2f{
+    width : 45%;
+    height : 95%;
+    float : left;
+  }
+  
+  #d2 #d2s{
+    width : 45%;
+    height : 90%;
+    float : right;
+    padding : 10px;
+  }
+  /* p크기는 d2f를 100퍼로 기준으로 본다. */
+  #d2 #d2f p{
+    width : 96%;
+    height : 65%;
+    padding : 5px;
+  }
+   /* img크기는 p를 100퍼로 기준으로 본다. */
+   #d2 #d2f p img{
+    width : 99%;
+    height : 99%;
+    margin-left : 3px;
+  }
+  
+  #d2s span{
+    background-color : yellow;
+    color : red;
+  }
+</style>
+</head>
+<body>
+<div id="d1">
+  <div>
+  	<h1>hello</h1>
+  	<p></p>
+  </div>
+  
+  <div>
+    hello
+  </div>
+</div>
+
+<br><hr><br>
+
+<div id="d2">
+  <div id="d2f">
+  	<h1>봄꽃</h1>
+  	<p>
+  	  <img src="../images/봄꽃1.jpg" alt="봄꽃1.jpg">
+  	</p>
+  </div>
+  
+  <div id="d2s">
+    개나리와 함께 봄꽃 중에서는 <b>일찍 피</b>는 편이다. <span>3월 20일</span>을 전후해 
+    제주특별자치도 서귀포시, <span>부산광역시</span>, 경상남도 통영시, 전라남도 여수시 등 
+    남해안 도시에서 피기 시작해 3월 25~30일까지 전라북도 전주시, 대전
+    광역시, 서울특별시, <span>강원도 강릉시</span> 등 중남부 대부분 지역에서 피어난다. 봄이 
+    일찍 찾아오는 21세기에 들어서는 부산, 제주도 등에서는 3월 초순 무렵에도 진달
+    래를 하나, 둘씩 볼 수 있다.
+ 국화 후보로 밀어주기도 한다.
+  </div>
+</div>
+</body>
+</html>
