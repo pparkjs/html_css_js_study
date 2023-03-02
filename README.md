@@ -1,2 +1,2 @@
 # html_css_js_study
-html, css, javascript를 공부한 자료 입니다.
+공부하기 시작한 날짜부터 해당 날에 배운 것을 일별로 놓았습니다.
