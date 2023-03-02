@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부스타일 -->
+<link rel="stylesheet" href="../css/mystyle.css">
+
+<!-- 내부스타일 (우선순위는 내부가 1등)-->
+<style>
+form{
+	border : 5px solid green;
+}
+</style>
+</head>
+<body>
+<h3>회원가입 화면</h3>
+
+<form id="f2" style="border : 10px solid red;">
+
+	<label>이름</label>
+	<input type="text" name="name">
+	<br>
+	
+	<label>주소</label>
+	<input type="text" name="addr">
+	<br>
+	
+	<label>이메일</label>
+	<input type="text" name="email" pattern="\s@\s">
+	<br>
+
+	<label>성별</label>
+	<input type="radio" name="gender" value="Male">Male
+	<input type="radio" name="gender" value="Female">Female
+	<br>
+	
+	<label>내용</label><br>
+	<textarea row="10" cols="20"	name="area"></textarea>
+	<br><br>
+	
+	<input type="submit" value="제출">
+	<input type="reset" value="초기화">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* 부모 기준으로 p의 첫번째 자식을 찾아라 */
+p:first-child{
+	background-color : yellow;
+}
+/* 짝수번째 p태그 자식 찾아라 */
+p:nth-child(2n){
+	background-color : lightgray;
+}
+/* 홀수번째 p태그 자식 선택하라 */
+p:nth-child(2n-1){
+	background-color : lightblue;
+}
+
+table {
+	 border : 2px solid blue;
+}
+
+td{
+	width : 200px;
+	height : 50px;
+}
+
+/* 테이블의 짝수번째 줄에 배경색 */
+tr:nth-child(2n){
+	background-color : lightgreen;
+}
+
+/* id가 tab2인 tr이 부모기준으로 td의 홀수 선택 */
+#tab2 td:nth-child(2n-1){
+	background-color: pink;
+}
+
+#tab2 td:nth-child(2n){
+	background-color: lime;
+}
+
+/* 아이디가 tab2인 tr의 첫번째 자식인 td 선택 */
+#tab2 tr:first-child > td{
+	font-weight : bold;
+	text-align: center;
+	font-size: 1.5em;
+/* 	이건 이미 td에다 백그라운드 줘서 tr에 못주지만 위에 > td해주면 됨 */
+/* tab2 의 자식은 tbody란게 있음 */
+	background-color: black;
+	color : white;
+}
+
+</style>
+</head>
+<body>
+<div>
+	<p>무궁화<span>꽃이</span>피었습니다.</p>
+	<p>능소화<span>꽃이</span>피었습니다.</p>
+	<p>라일락꽃이 피었습니다</p>
+	<p>햇빛은 쨍쨍 모래알은 반짝</p>
+	<p>우리집 강아지는 복슬강아지</p>
+	<p>동구밖 가수원길</p>
+	<span>진달래 꽃이 피었습니다.</span>
+</div>
+<hr>
+<div>
+	<p>무궁화<span>꽃이</span>피었습니다.</p>
+	<p>능소화<span>꽃이</span>피었습니다.</p>
+	<p>라일락꽃이 피었습니다</p>
+	<p>햇빛은 쨍쨍 모래알은 반짝</p>
+	<p>우리집 강아지는 복슬강아지</p>
+	<p>동구밖 가수원길</p>
+	<span>진달래 꽃이 피었습니다.</span>
+</div>
+<hr>
+
+<table border="1">
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<br><br>
+
+<table border="1" id="tab2">
+	<tr>
+		<td>이름</td>
+		<td>전화번호</td>
+		<td>이메일</td>
+		<td>주소</td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+</body>
+</html>
