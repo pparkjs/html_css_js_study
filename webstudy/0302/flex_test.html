@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ div{
+ 	border : 1px solid blue;
+ 	margin : 10px;
+ 	padding : 5px;
+/*  flex 테두리만 만들때는 없어도 되지만 안에 각종 요소가 들어갈땐 필요 */
+ 	box-sizing : border-box; 
+ }
+ #main{
+ 	display : flex;
+ 	flex-direction: column; 
+ }
+ #header, #footer{
+/*  width : 100%; 안해도 자동으로 basis 됨 */
+ 	height : 100px;
+ }
+ #container{
+ 	display : flex;
+ 	height : 400px;
+/*  flex-direction: row;  안써도 자동 row(가로방향) */
+ }
+ #left{
+ 	flex : 30%;
+ } 
+ #center{
+ 	flex : 70%
+ }
+</style>
+</head>
+<body>
+<div id="main">
+	<div id="header">header</div>
+	<div id="container">
+		<div id="left">left</div>
+		<div id="center">center</div>
+	</div>
+	
+	<div id="footer">footer</div>
+</div>
+</body>
+</html>
