@@ -44,13 +44,13 @@
  	margin-top : 13px;
  }
  aside{
- 	width : calc(30% - 1%);
+ 	flex : 30%;
  	background: #FF848F;
  	padding-left : 20px;
  	margin-right : 13px;
  }
  section{
- 	width : calc(100% - 1%);
+ 	flex : 70%;
  	padding : 20px;
  	background: #5CEEE6;
  }
@@ -83,6 +83,14 @@
  p{
  	font-size: 1.2em;
  }
+ 
+ @media (max-width : 500px){
+ 	#container{
+ 		flex : 100%;
+ 		flex-direction : column;
+ 		height : auth;
+ 	}
+ } 
 </style>
 </head>
 <body>
@@ -92,7 +100,7 @@
 	시멘틱 태그로 만들어진 페이지 입니다.
 	</header>
 	<div id="container">
-		<aside>
+	<aside>
 		<h2>Links</h2>
 		<ul>
 			<li><a href="http://www.w3schools.com">w3schools</a></li>
@@ -100,8 +108,8 @@
 			<li><a href="http://www.Daum.net">Daum</a></li>
 		</ul>
 		<img src="../images/문상훈.jpg" alt="문상훈.jpg">
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;문상훈</p>
-		</aside>
+		<figcaption>문상훈</figcaption>>
+	</aside>
 		<section>
 			<article>
 			<h2>Semantic Tags</h2>
