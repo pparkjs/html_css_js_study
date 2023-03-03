@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+	border : 1px solid red;
+	width : 500px;
+	height : 200px;
+}
+</style>
+ <script type="text/javascript">
+	
+ window.onload = function(){
+ 
+ 	var today = new Date();
+ 	
+ 	var vdiv = document.getElementsByTagName('div')
+ 	
+ 	var str = today + "<br>";
+ 	//우리나라 형식으로 바꾸는것 Date넣으면 날짜만 찍히고 Date빼면 날짜시간 찍힘
+ 	str += today.toLocaleDateString()
+ 	
+ 	vdiv[0].innerHTML = str;
+ }
+ </script>
+
+</head>
+<body>
+ <div></div>
+ 
+ 
+</body>
+</html>

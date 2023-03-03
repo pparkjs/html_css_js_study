@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#result {
+	border: 1px solid blue;
+	width: 500px;
+	height: 200px;
+	padding: 20px;
+}
+</style>
+<script type="text/javascript">
+
+function sub(a, b){
+	//전역 변수
+	res = a - b;
+	
+	//지역변수여서 밑에 function에서 사용 x
+// 	var res = a - b;
+	
+}
+function add(a, b){
+	
+	//지역변수
+	let ares = a + b; // 지역변수일때는 리턴해줘야함
+	
+	return ares;
+}
+
+// // window.onload : 화면에 body가 실행되고 나면 실행해라
+ window.onload = function(){
+	 
+// 	sub(10, 4);
+// 	let vadd = add(10, 4); //리턴값 받아서 변수에 저장
+	
+// 	let vres = document.getElementById('result');
+	
+// 	vres.innerHTML = "10 - 4 = " + res + "<br>";
+// 	// =만 쓰면 위에 꺼 덮어 쓰여져서 이어서 쓸거면 += 해줌
+// 	vres.innerHTML += "10 + 4 = " + vadd + "<br>";
+	 
+	//이렇게 한줄로 다 쓸 수도 있다.
+	sub(10,4); // 이거 한 번 실행하면 전역변수  res가 메모리상에 남아서 res쓰면 그대로 쓰일 수 있음
+	document.getElementById('result').innerHTML = "10 - 4 = " + res + "<br>"
+	document.getElementById('result').innerHTML += "10 + 4 = " + add(10, 4) + "<br>"
+	
+ }
+
+</script>
+
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>
