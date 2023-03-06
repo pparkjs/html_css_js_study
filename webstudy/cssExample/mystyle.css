@@ -34,3 +34,28 @@ textarea{
  	border-bottom : 2px dotted blue;
  	background : lightblue;
  }
+ div.box{
+ 	box-sizing : border-box;
+ 	border : 1px solid blue;
+ 	width : 100%;
+ 	height : auto;
+/*  	margin : 10px; */
+ 	padding : 20px;
+ } 
+ 
+ div.result{	
+ 	box-sizing : border-box;
+	width: 90%;
+	height : auto;
+	padding : 10px;
+	margin : 10px;
+	border : 1px dotted orange;
+}	
+.box input[type=button]{
+	width : 80px;
+	height : 40px;
+	background : blue;
+	color : white;
+	border-radius: 20px;
+}
+ 
