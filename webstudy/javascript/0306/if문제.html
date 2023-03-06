@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../cssExample/mystyle.css">
+<script>
+ window.onload = function(){
+	 
+	 //입력 - 숫자 2개, 연산자 1개
+	 su1 = parseInt(prompt("수1 입력"));
+	 su2 = parseInt(prompt("수2 입력"));
+	 op = prompt("연산자입력");
+	 
+	 //비교 - 연산자 - 계산 처리
+	 switch(op){
+	 case "+" :
+		 res = su1 + su2;
+		 break;
+	 case "-" :
+		 res = su1 - su2;
+		 break;
+	 case "*" :
+		 res = su1 * su2;
+		 break;
+	 case "/" :
+		 res = su1 / su2;
+		 break;
+	 }
+	 
+	 //출력 -> 34 - 23 = 11 
+	 
+// 	 str = su1 + " " + op + " " + su2 + " = " + res;
+	 str = `${su1} ${op} ${su2} = ${res}`;
+	 //id=result인 요소를 검색
+	 document.getElementById('result').innerHTML = str;
+ }
+
+</script>
+
+</head>
+<body>
+<div class="box">
+	<p>숫자 2개와 연산자 1개를 입력 받아 연산자에 맞는 계산결과를 출력</p>
+	입력 : prompt <br>
+	출력 : div요소를 이용 - innerHTML / innerText <br>
+	
+	백틱(`)을 이용한 출력내용 -템플릿 리터럴 <br>
+	일반문자열의 + 기호 와 " " 를 쓰지 않고 단순하게 처리
+	변수를 표현 할때는 ${변수}<br>
+	
+	<br>
+	<div class="result"></div>
+</div>
+
+
+
+</body>
+</html>
