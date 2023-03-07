@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../cssExample/mystyle.css">
+<script>
+
+// function proc1(op){
+// 	//버튼을 클릭한 자신 (버튼클래스라 생각하면 됨)
+// 	this : proc1() 함수를 호출한 button객체
+// }
+
+// proc1 = function(op){
+// 	this : proc1() 함수를 호출한 button객체
+// }
+
+proc1 = (op) => {
+	//this 사용할 때는 람다함수 안씀
+// 	this : 람다 함수, 현재 함수 자체 
+	
+	//입력한 값 가져오기 각 id를 검색 - value
+	// trim하면 앞뒤로 자름 스페이스바 무시함 나중에 db에 저장할때 중요
+	fvalue = (document.getElementById('first').value.trim());
+	svalue = (document.getElementById('second').value.trim());
+	
+	//이것도 숫자가 아니냐 맞냐 정함 true,false
+	//하지만 이걸로하면 스페이스바가 데이터 무시됨
+// 	a = window.isNaN(fvalue);
+// 	b = window.isNaN(svalue);
+// 	console.log(a,b);
+	
+	//정규식  /^로 시작 $/끝
+	//이거 할려면 앞에 parseInt 없애라?
+	freg = /^[0-9]+$/
+	sreg = /^\d+$/
+	
+	if(freg.test(fvalue) && sreg.test(svalue)){
+	//op를 비교
+	switch(op){
+	case "+" :
+		res = add(fvalue, svalue);
+		break;
+	case "-" :
+		res = sub(fvalue, svalue);
+		break;
+	case "*" :
+		res = multi(fvalue, svalue);
+		break;
+	case "/" :
+		res = div(fvalue, svalue);
+		break;
+	}
+	//출력
+	document.getElementById('result1').innerHTML = res;
+	}else{
+		alert("데이터가 올바르지 않습니다.");
+	}
+}
+ 
+add = (fvalue, svalue) => {
+	return parseInt(fvalue+svalue);
+}
+sub = (fvalue, svalue) =>{
+	return fvalue-svalue;
+}
+multi = (fvalue, svalue) => {
+	return fvalue*svalue;
+}
+div = (fvalue, svalue) => {
+	return fvalue/svalue;
+}
+
+
+</script>
+</head>
+<body>
+<div class="box">
+	<p>
+	</p>
+<!-- 	0~9 사이 or \d 에서 +는 한글자 이상 , {3,4}는 3~4글자만 이 기능은 submit할때만--> 
+<!-- 	첫번째수 <input type="text" id="first" pattern="[0-9]+"> <br> -->
+<!-- 	두번째수 <input type="text" id="second" pattern="\d+"> <br> -->
+	
+	첫번째수 <input type="text" id="first" > <br>
+	두번째수 <input type="text" id="second"> <br>
+	<br>
+
+	<input type="button" value="+" onclick="proc1('+')">
+	<input type="button" value="-" onclick="proc1('-')">
+	<input type="button" value="*" onclick="proc1('*')">
+	<input type="button" value="/" onclick="proc1('/')">
+	<br><br>
+	<div class="result" id="result1"></div>
+</div>
+</body>
+</html>
