@@ -9,13 +9,13 @@
  var rect = {
 	width : 12,
 	height : 9,
-	name : "사각형",
+	
 	
 	getArea(){
 		return this.width * this.height;
 	},
 	getCircum(){
-		return (this.width + this.height) * 2;
+		return (parseInt(this.width) + parseInt(this.height)) * 2;
 	}
 	
 	// 이렇게도 가능
@@ -31,9 +31,10 @@
 //  proc1 = function(){ }
 proc1 = () => {
 	
+	rect.name = "사각형";
+	
 	//출력
-	str = "가로 : " + rect.width + "<br>";
-	str += `가로 : ${rect.width} <br>`;
+	str = `가로 : ${rect.width} <br>`;
 	str += `세로 : ${rect.height} <br>`;
 	str += `이름 : ${rect.name} <br>`
 	str += `면적 : ${rect.getArea()} <br>`;
@@ -44,6 +45,27 @@ proc1 = () => {
 	document.getElementById('result1').innerHTML = str;
 }
  
+proc2 = () => {
+	
+	//입력 - rect객체의 속성에 대입
+	rect.width = prompt("가로입력");
+	rect.height = prompt("세로입력");
+	rect.name = prompt("이름입력");
+	
+	//계산 처리
+	area = rect.getArea();
+	cir = rect.getCircum(); 
+	
+	//출력
+	str = `가로 : ${rect.width} <br>`;
+	str += `세로 : ${rect.height} <br>`;
+	str += `이름 : ${rect.name} <br>`
+	str += `면적 : ${area} <br>`;
+	str += `둘레 : ${cir} <br>`;	 
+	
+	document.getElementById('result2').innerHTML = str;
+	
+}
 </script>
 </head>
 <body>
@@ -60,6 +82,19 @@ proc1 = () => {
 	<input type="button" value="확인" onclick="proc1()">
 	<br><br>
 	<div class="result" id="result1"></div>
+</div>
+
+<div class="box">
+	<p> 리터럴 방식의 Rect객체 <br>
+	가로, 세로의 값을 입력 하여 출력 <br>
+	메소드 : getArea(), getCircum() <br>
+	<p>
+
+	</p>
+	
+	<input type="button" value="확인" onclick="proc2()">
+	<br><br>
+	<div class="result" id="result2"></div>
 </div>
 
 </body>
