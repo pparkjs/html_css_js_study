@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../cssExample/mystyle.css">
+
+<script>
+proc1 = () =>{
+	
+	ultag = document.getElementsByTagName('ul')[0];
+	
+	itemlist = ultag.getElementsByTagName('li')
+	
+	str = "";
+	for (i = 0; i < itemlist.length; i++) {
+		str += itemlist[i].firstChild.data + "<br>";
+	}
+	
+	document.getElementById('result1').innerHTML = str;
+	
+}
+
+proc2 = () =>{
+	
+	ultag = document.getElementsByTagName('ul')[1];
+	listitem = ultag.getElementsByTagName('li');
+	
+	for (i = 0; i < listitem.length; i++) {
+		text = listitem[i].firstChild.data;
+// 		alert(text);
+		imgtag = document.createElement('img');
+		imgtag.src = "../../images/" + text ;
+		imgtag.alt = text;
+		listitem[i].appendChild(imgtag);
+	}
+	
+}
+proc3 = (litag) =>{
+	
+	text = litag.firstChild.data;
+	imgtag = document.createElement('img');
+	imgtag.src = "../../images/" + text;
+	imgtag.alt = text;
+	
+	litag.appendChild(imgtag);
+	
+}
+
+arr=["hello", "happy", "안녕", "알사탕", "굿모닝", "javaScript", "html", "css", "인간햇살"];
+
+proc4 = () =>{
+	
+	rand = parseInt(Math.random() * arr.length); //arr[rand]
+	
+	ptag = document.createElement('p'); //p태그 생성
+	text = document.createTextNode(arr[rand]);
+	
+	ptag.appendChild(text);
+	
+// 	document.getElementById('result4').appendChild(ptag);
+	r4 = document.getElementById('result4');
+	
+	r4.appendChild(ptag);
+	
+}
+
+
+removeNode = () =>{
+// 	document.getElementById('result4');
+	r4.removeChild(r4.firstChild) //첫번째 p태그를 r4에서 지워라
+	
+}
+
+proc5 = () =>{
+	
+	//랜덤 생성 - 문자열 선택
+	rand = parseInt(Math.random() * arr.length);
+	
+	//문자열로 textNode생성
+	text = document.createTextNode(arr[rand]);	
+	//input tag 생성
+	intag = document.createElement('input');
+	//input tag의 속성 - type, value
+	intag.type = "button";
+	intag.value = "삭제"
+	intag.onclick = function(){ // 이 function이 람다로 오면 안됨
+		//클릭한 input태그 버튼이 this가 됨
+		this.parentNode.remove(); //내가 클릭한 p를 삭제한것
+	}
+	
+	//p태그 생성
+	ptag = document.createElement('p');
+	//p태그에 textNode추가
+	ptag.appendChild(text);
+	
+	//p태그에 input태그 추가
+	ptag.appendChild(intag);
+	
+	//result5에 p태그를 추가
+	document.getElementById('result5').appendChild(ptag);
+	
+}
+
+proc6 = (buttn) => {
+	
+	//border값을 가져온다 
+	//비교 - 있으면 "none"로 설정
+	vimgs = document.querySelectorAll('.im');
+	for (i = 0; i < vimgs.length; i++) {
+		
+		console.log(vimgs[i].style.border);
+	}
+	
+	
+	//this를 받는 매개변수 buttn이 없을때 시작버튼 검색
+	//document.getElementById('')
+	
+	//시작 버튼 누르면 버튼 사라짐
+	buttn.style.display = "none";
+	gbuttn = buttn // 전역변수로 만듬
+	
+	//img들의 부모요소인 imgd를 검색
+	vdimg = document.getElementById('imgd');
+	
+	a = setInterval(function(){
+		
+		//첫번째 자식 img를 선택 (문자 가져올거면 뒤에 .data붙여야함)
+		fimg = vdimg.firstChild
+		
+		//부모의 끝으로 선택된 첫번째 자식을 추가한다.
+		vdimg.appendChild(fimg);
+		
+	}, 500);
+
+}
+//종료 버튼 누르면 다시 나타나게 함
+stop = () =>{
+	gbuttn.style.display = "inline";
+	
+	clearInterval(a)
+	
+	//이미지의 갯수
+	imleng = document.querySelectorAll('.im').length;
+	
+	//랜덤 - 이미지의 갯수범위 내에서
+	rand = parseInt(Math.random() * imleng);
+	
+	document.querySelectorAll('.im')[rand].style.border = "8px double red";
+	
+}
+
+
+</script>
+<style>
+img{
+	width : 70px;
+	height : 70px;
+	border-radius : 50%;
+}
+#imgd{
+	width : 80%;
+	margin : 10px;
+	height : 100px;
+	border : 5px double blue;
+}
+#imgd img{
+	width : 100px;
+	height : 100px;
+	border-radius : 50%;
+}
+</style>
+</head>
+<body>
+
+
+<div class="box">
+	<p>
+
+	</p>
+	<ul>
+		<li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+	</ul>
+	
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div class="result" id="result1"></div>
+</div>
+
+<div class="box">
+	<p>
+	li요소의 text를 가져와서 img객체를 생성하여 추가한다.
+	</p>
+	<ul>
+		<li>spongebob.png</li>
+        <li>딸기스무디.jpg</li>
+        <li>카페라떼.jpg</li>
+        <li>펭귄.jpg</li>
+        <li>코알라.jpg</li>
+	</ul>
+	
+	<input type="button" value="확인" onclick="proc2()">
+	<br><br>
+	<div class="result" id="result2"></div>
+</div>
+
+<div class="box">
+	<p>
+	li요소의 onlick이벤트로 실행<br>
+	이벤트가 발생되면 text를 가져와서 img객체를 생성하여 추가한다.
+	</p>
+	<ul>
+<!-- this하면 클릭한 그 객체 자체를 호출함 -->
+		<li onclick="proc3(this)">spongebob.png</li>
+        <li onclick="proc3(this)">딸기스무디.jpg</li>
+        <li onclick="proc3(this)">카페라떼.jpg</li>
+        <li onclick="proc3(this)">펭귄.jpg</li>
+        <li onclick="proc3(this)">코알라.jpg</li>
+	</ul>
+	
+	<br><br>
+	<div class="result" id="result3"></div>
+</div>
+
+<div class="box">
+	<p>
+	 랜덤으로 발생되는 문자열을 textNode로 생성하고 <br>
+	 p태그를 생성하여 textNode를 추가한다.<br>
+	 result4에 p태그를 추가한다.<br>
+	</p>
+
+	<input type="button" value="추가" onclick="proc4()">
+	<input type="button" value="삭제" onclick="removeNode()">
+	<br><br>
+	<div class="result" id="result4"></div>
+</div>
+
+<div class="box">
+	<p>
+	 랜덤으로 발생되는 문자열을 textNode로 생성하고 <br>
+	 input 태그를 생성 - type, value 속성
+	 p태그를 생성하여 textNode와 input태그를 추가한다.<br>
+	 result5에 p태그를 추가한다.<br>
+	</p>
+
+	<input type="button" value="추가" onclick="proc5()">
+	<br><br>
+	<div class="result" id="result5"></div>
+</div>
+
+<div class="box">
+	<p>
+	 시작버튼 클릭시 첫번째 이미지를 선택해서 맨뒤로 추가한다.<br>
+	 시작버튼은 사라진다.
+	</p>
+	
+	
+	<div id="imgd">
+		<img class="im" src="../../images/문상훈.jpg" alt="문상훈.jpg">
+		<img class="im" src="../../images/문상훈2.jpg" alt="문상훈2.jpg">
+		<img class="im" src="../../images/펭귄.jpg" alt="펭귄.jpg">
+		<img class="im" src="../../images/호랑이.jpg" alt="호랑이.jpg">
+		<img class="im" src="../../images/수지.jpg" alt="수지.jpg">
+	</div>
+	<input type="button" value="시작" onclick="proc6(this)">
+	<input type="button" value="종료" onclick="stop()">
+	<br><br>
+	<div class="result" id="result6"></div>
+</div>
+
+</body>
+</html>
